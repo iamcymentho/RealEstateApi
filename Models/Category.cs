@@ -12,7 +12,9 @@ namespace RealEstateApi.Models
         [Required (ErrorMessage = "ImageUrl can't be empty")]
         public string ImageUrl { get; set; }
 
-        public ICollection<Property> Properties { get; set; } // Estatblishing One - Many relationship between Categories and Properties
+        //public ICollection<Property> Properties { get; set; } // Estatblishing One - Many relationship between Categories and Properties
+
+        public ICollection<Asset> Assets { get; set; } // Estatblishing One - Many relationship between Categories and Properties
 
     }
 }

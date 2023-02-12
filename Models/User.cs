@@ -6,17 +6,20 @@ namespace RealEstateApi.Models
     {
         public int Id { get; set; }
 
-        [Required (ErrorMessage = "Name Field can't be empty")]
+       // [Required (ErrorMessage = "Name Field can't be empty")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Fill in a valid email address")]
+       // [Required(ErrorMessage = "Fill in a valid email address")]
         public string EmailAddress { get; set; }
 
-        [Required(ErrorMessage = "Password Field can't be empty")]
+       // [Required(ErrorMessage = "Password Field can't be empty")]
         public string Password { get; set; }    
 
         public string PhoneNumber { get; set; }
 
-        public ICollection<Property> Properties { get; set; }  // Estatblishing One - Many relationship between Users and Properties
+        // public ICollection<Property> Properties { get; set; }  // Estatblishing One - Many relationship between Users and Properties
+
+        public ICollection<Asset> Assets { get; set; } // Estatblishing One - Many relationship between Categories and Properties
     }
+
 }

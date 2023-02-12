@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RealEstateApi.Data;
 using RealEstateApi.Models;
@@ -21,6 +22,7 @@ namespace RealEstateApi.Controllers
 
         // GET: api/<CategoriesController>
         [HttpGet]
+        [Authorize]
         public IActionResult Get()  
         {
 
@@ -69,7 +71,6 @@ namespace RealEstateApi.Controllers
         }
 
 
-
         // POST api/<CategoriesController>
         [HttpPost]
         public IActionResult Post([FromBody] Category category)
@@ -79,6 +80,7 @@ namespace RealEstateApi.Controllers
 
             return StatusCode(StatusCodes.Status201Created);
         }
+
 
         // PUT api/<CategoriesController>/5
         [HttpPut("{id}")]
